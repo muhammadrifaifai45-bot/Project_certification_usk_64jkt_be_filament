@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\CertificationCodes\Schemas;
 
+use App\Models\CertificationCode;
 use App\Models\daftarpeserta;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;

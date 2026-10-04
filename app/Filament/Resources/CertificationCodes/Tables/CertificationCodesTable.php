@@ -30,6 +30,11 @@ class CertificationCodesTable
                         'Verifikasi' => 'Data Dalam Verifikasi petugas ',
                         'DataTerverifikasi' => 'Berhasil verifikasi',                    
                     })
+                    ->color(fn(string $state): string  =>match ($state){
+                        'Antrian' => 'info',
+                        'Verifikasi' => '#FFCB56',
+                        'DataTerverifikasi' => 'success'
+                    })
                                 
                      ->badge(),
                 TextColumn::make('created_at')
