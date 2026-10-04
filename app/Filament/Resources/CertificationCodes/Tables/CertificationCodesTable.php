@@ -24,7 +24,14 @@ class CertificationCodesTable
                 TextColumn::make('certification_code')
                     ->searchable(),
                 TextColumn::make('status')
-                    ->badge(),
+                    ->formatStateUsing(fn(string $state): string =>match($state)
+                    {
+                        'Antrian' => 'Data Dalam Antrian',
+                        'Verifikasi' => 'Data Dalam Verifikasi petugas ',
+                        'DataTerverifikasi' => 'Berhasil verifikasi',                    
+                    })
+                                
+                     ->badge(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
