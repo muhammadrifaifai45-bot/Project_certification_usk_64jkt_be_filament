@@ -18,6 +18,7 @@ class CertificationCodeForm
             ->components([
                 Select::make('daftarpeserta_id')
                     ->label('Pilih nama peserta yang telah terdaftar')
+                    ->disableOptionWhen(fn($value) => CertificationCode::where('daftarpeserta_id',$value)->exists())
                     ->required()
                     ->relationship('daftarpeserta', 'nama_peserta')
                     ->searchable()
