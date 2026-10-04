@@ -3,12 +3,14 @@
 namespace App\Filament\Resources\DaftarPesertas\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 
 class DaftarPesertasTable
 {
@@ -43,6 +45,12 @@ class DaftarPesertasTable
             ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
+                DeleteAction::make()
+                ->requiresConfirmation()
+                ->modalHeading(fn(Model $record) => "Apakah Anda yakin ingin menghapus Data peserta: {$record->nama_peserta}")
+                ->modalDescription("Data yang telah di hapus tidak dapat di pulihkan")
+                ->modalSubmitActionLabel("Hapus Data")
+                ->modalCancelActionLabel("Batal Menghapus Data")
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

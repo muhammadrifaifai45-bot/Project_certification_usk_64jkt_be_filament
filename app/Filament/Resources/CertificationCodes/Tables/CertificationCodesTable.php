@@ -9,6 +9,7 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 
 class CertificationCodesTable
 {
@@ -39,7 +40,9 @@ class CertificationCodesTable
             ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
-                DeleteAction::make(),
+                DeleteAction::make()
+                ->requiresConfirmation()
+                ->modalHeading(fn(Model $record) => "Apakah Anda yakin ingin menghapus Code data: {$record->daftarpeserta->nama_peserta}")
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

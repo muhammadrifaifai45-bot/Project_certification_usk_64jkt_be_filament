@@ -11,6 +11,7 @@ use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 
 class CertificationListsTable
 {
@@ -41,6 +42,12 @@ class CertificationListsTable
                 ViewAction::make(),
                 EditAction::make(),
                 DeleteAction::make()
+                ->requiresConfirmation()
+                ->modalHeading(fn(Model $record) => "Hapus data {$record->daftar_sertifikasi}")
+                ->modalDescription(fn(Model $record) => "Apakah anda Yakin ingin menghapus data {$record->daftar_sertifikasi}")
+                ->modalSubmitActionLabel('Hapus Data')
+                ->modalCancelActionLabel('Batal Menghapus Data')
+                
                 ])
                 
             ])
