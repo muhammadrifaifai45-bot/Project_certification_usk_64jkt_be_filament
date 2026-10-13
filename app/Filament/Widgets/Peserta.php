@@ -30,7 +30,7 @@ class Peserta extends StatsOverviewWidget
 
             Stat::make('Total Peserta terverifikasi', CertificationCode::count())
             ->description('Jumlah Seluruh Peserta yang Terverifikasi')
-            ->descriptionIcon('heroicon-m-user-group')
+            ->descriptionIcon('heroicon-m-check')
             ->color('success')
             ->chart([0,1,4,2, CertificationCode::count()])
             
