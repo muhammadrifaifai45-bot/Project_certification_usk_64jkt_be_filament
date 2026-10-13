@@ -19,9 +19,15 @@ class DaftarPesertaForm
                     ->relationship('CertificationList','daftar_sertifikasi')
                     ->required(),
                 TextInput::make('nama_peserta')
+                    ->minLength(5)
+                    ->maxLength(50)
+                    ->validationMessages([
+                        'min' => 'Nama Harus lebih dari 5 character'
+                    ])
                     ->required(),
                 TextInput::make('nik')
                     ->label('NIK')
+                    ->maxLength(16)
                     ->required(),
                 Select::make('gender')
                     ->label('jenis Kelamin')

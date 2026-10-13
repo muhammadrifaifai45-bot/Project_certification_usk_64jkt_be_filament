@@ -2,6 +2,9 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Pages\Auth\CustomRegister;
+use App\Filament\Pages\Auth\Regiscustom;
+use App\Filament\Pages\Auth\Register;
 use App\Filament\Widgets\Peserta;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
