@@ -17,8 +17,12 @@ use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
+use Filament\Forms\Components\TextInput; // Tambahkan import ini
+use Illuminate\Validation\Rules\Password;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+
+use function Laravel\Prompts\password;
 
 class YesPanelProvider extends PanelProvider
 {
@@ -30,11 +34,37 @@ class YesPanelProvider extends PanelProvider
             ->path('yes')
             ->brandlogo(asset('bnsp.png'))
             ->brandLogoHeight('5.5rem')
+            ->registration()
             ->login()
             ->spa(hasPrefetching:true)
             ->colors([
                 'primary' => '#790D16',
             ])
+            ->bootUsing(function () {
+                TextInput::configureUsing(function (TextInput $component) {
+                    
+                    if ($component->getName() === 'password') {                                              
+                        $isRegisterPage = str_contains(request()->url(), 'register') || 
+                                          str_contains(request()->header('referer', ''), 'register');
+            
+                        if ($isRegisterPage) {
+                            $component
+                                ->minLength(8)
+                                ->regex('/^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+$/')
+                                ->validationMessages([
+                                    'min' => 'Password tidak boleh kurang dari 8 karakter.',
+                                    'regex' => 'Password harus mengandung minimal 1 huruf kapital, 1 angka, dan 1 karakter( @, #, $, !, _).'
+                                ]);
+                        }
+                    }
+                });
+            })
+            
+            
+                
+                    
+            
+           
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([

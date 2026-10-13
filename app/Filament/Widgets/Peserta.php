@@ -2,6 +2,7 @@
 
 namespace App\Filament\Widgets;
 
+use App\Models\CertificationCode;
 use App\Models\CertificationList;
 use App\Models\daftarpeserta;
 use Filament\Widgets\StatsOverviewWidget;
@@ -26,6 +27,12 @@ class Peserta extends StatsOverviewWidget
             ->descriptionIcon('heroicon-m-clipboard-document-list')
             ->color('success')
             ->chart([1,2,3,4,5,10, CertificationList::count()]),
+
+            Stat::make('Total Peserta terverifikasi', CertificationCode::count())
+            ->description('Jumlah Seluruh Peserta yang Terverifikasi')
+            ->descriptionIcon('heroicon-m-user-group')
+            ->color('success')
+            ->chart([0,1,4,2, CertificationCode::count()])
             
            
         ];
