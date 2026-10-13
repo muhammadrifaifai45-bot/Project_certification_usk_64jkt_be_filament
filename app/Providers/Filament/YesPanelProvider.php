@@ -31,6 +31,7 @@ class YesPanelProvider extends PanelProvider
             ->brandlogo(asset('bnsp.png'))
             ->brandLogoHeight('5.5rem')
             ->login()
+            ->registration()
             ->spa(hasPrefetching:true)
             ->colors([
                 'primary' => '#790D16',
