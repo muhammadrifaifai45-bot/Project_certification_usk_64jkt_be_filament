@@ -31,7 +31,7 @@ class DaftarPesertaForm
                     ->required()
                     ->columnSpanFull(),
                 FileUpload::make('surat_image')
-                    ->label('Dokumen Pendukung')
+                    ->label('Dokumen Pendukung (KTP/KK)')
                     ->image()
                     ->required(),
             ]);

@@ -36,6 +36,7 @@ class YesPanelProvider extends PanelProvider
             ->brandLogoHeight('5.5rem')
             ->registration()
             ->login()
+            ->registration()
             ->spa(hasPrefetching:true)
             ->colors([
                 'primary' => '#790D16',
