@@ -25,7 +25,7 @@
                 </div>
             </div>
 
-            <button onclick="test()" class="w-full text-center py-4 text-base font-bold text-white bg-[#790D16] hover:bg-[#5a0a10] rounded-lg shadow-md transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-red-200">
+            <button onclick="navigasislide(2)" class="w-full text-center py-4 text-base font-bold text-white bg-[#790D16] hover:bg-[#5a0a10] rounded-lg shadow-md transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-red-200">
                 Next
             </button>
         </div>
@@ -54,8 +54,63 @@
             </div>
             <div class="absolute bottom-16 left-12 bg-black/30 backdrop-blur-sm text-white text-xs lg:text-sm px-5 py-2.5 rounded-full">Asesor Berkompeten Serta Bermutu Global</div>
        </div>
-
-      
      </div>
+
+     <!-- Slide 2 -->
+        <div id="slide2" class="slide min-h-screen flex flex-col md:flex-row">
+            <div class="w-full md:w-[45%] flex flex-col justify-between px-8 sm:px-16 lg:px-24 py-12 bg-[#FFFBF7]">
+                <div class="max-w-md w-full">
+                <h1 class="text-4xl lg:text-5xl font-serif font-black text-gray-900 tracking-tight leading-tight mb-16">
+                    Mulai Sertifikasi Sedari Awal
+                </h1>
+
+                <p class="text-gray-500 text-sm lg:text-base leading-relaxed mb-12 font-medium">
+                    Registrasi dan daftarkan diri anda dalam program sertifikasi bnsp untuk membuktikan kemampuan anda yang berstandar Global dan industri
+                </p>
+
+                <div class="grid grid-cols-4 gap-2 mb-8">
+                    <div class="h-1 bg-[#790D16] rounded-full"></div>
+                    <div class="h-1 bg-[#790D16] rounded-full"></div>
+                </div>
+                
+                <div class="flex gap-4 items-center mb-6">
+                    <button onclick="navigasislide(1)" class="w-1/3 text-center py-3.5 text-sm font-bold text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 rounded-xl shadow-sm transition-colors cursor-pointer">
+                        Kembali
+                    </button>
+                    <a href="/yes/register" class="w-2/3 text-center py-3.5 text-sm font-bold text-white bg-[#790D16] hover:bg-[#5a0a10] rounded-xl shadow-md transition-colors no-underline block">
+                        Daftar Bnsp
+                    </a>
+                </div>
+                
+
+                <p class="text-sm text-gray-600 font-medium">
+                    Sudah memiliki akun bnsp? <a href="/yes/login" class="text-[#790D16] font-bold hover:underline">Masuk</a>
+                </p>
+            </div>
+            </div>
+
+        <!-- slide 2 kanan -->
+        <div class="w-full md:w-[55%] bg-[#790D16] relative flex flex-col items-center justify-center p-8 min-h-[350px] md:min-h-screen">
+            <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-red-950/15 pointer-events-none"></div>
+            <div class="flex flex-col items-center gap-8 relative z-10">
+                <div class="w-44 h-44 bg-white rounded-full flex items-center justify-center shadow-2xl transform transition-transform duration-300 hover:scale-105">
+                    <svg class="h-20 w-20 text-[#790D16]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <h2 class="text-white text-lg font-semibold tracking-wide text-center">Anda Sudah bersedia Untuk mendaftar</h2>
+            </div>
+        </div>
+     </div>
+     
+  </div>
+
+  <script>
+    function navigasislide(slideNum){
+        document.getElementById('slide1').style.display = slideNum === 1 ? 'flex': 'none';
+        document.getElementById('slide2').style.display = slideNum === 2 ? 'flex': 'none';
+        window.scrollTo({top: 0, behavior: 'smooth'})
+    }
+  </script>
 </body>
 </html>
