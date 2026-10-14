@@ -22,17 +22,17 @@ class Peserta extends StatsOverviewWidget
             ->color('success') 
             ->chart([7, 3, 5, 2, 10, 4, daftarpeserta::count()]), 
 
-            Stat::make('Total Certification List', CertificationList::count())
+            stat::make('Total Certification List', CertificationList::count())
             ->description('Total sertifikasi profesi')
             ->descriptionIcon('heroicon-m-clipboard-document-list')
             ->color('success')
             ->chart([1,2,3,4,5,10, CertificationList::count()]),
 
-            Stat::make('Total Peserta Terverifikasi', CertificationCode::count())
-            ->description('Jumlah seluruh peserta yang sudah terverifikasi')
+            Stat::make('Total Peserta terverifikasi', CertificationCode::count())
+            ->description('Jumlah Seluruh Peserta yang Terverifikasi')
             ->descriptionIcon('heroicon-m-check')
             ->color('success')
-            ->chart([1,2,4,5,7, CertificationCode::count()]),
+            ->chart([0,1,4,2, CertificationCode::count()])
             
            
         ];
