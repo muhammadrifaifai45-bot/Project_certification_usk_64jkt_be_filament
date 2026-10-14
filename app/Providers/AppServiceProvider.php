@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Models\CertificationList;
 use App\Models\DaftarPeserta;
+use App\Models\User;
+use App\Observers\UserObserver;
 use App\Policies\CertificationListPolicy;
 use App\Policies\DaftarPesertaPolicy;
 use Filament\Forms\Components\TextInput;
@@ -25,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        User::observe(UserObserver::class);
         Gate::policy(DaftarPeserta::class, DaftarPesertaPolicy::class);
         Gate::policy(CertificationList::class, CertificationListPolicy::class);
     

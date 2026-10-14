@@ -16,6 +16,7 @@ class DaftarPesertasTable
 {
     public static function configure(Table $table): Table
     {
+        
         return $table
             ->columns([
                 TextColumn::make('CertificationList.code')

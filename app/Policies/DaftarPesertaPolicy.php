@@ -11,9 +11,18 @@ class DaftarPesertaPolicy
     /**
      * Determine whether the user can view any models.
      */
+
+
+     public function before(User $user, string $ability): ?bool{
+        if (strtolower($user->role) === 'admin') { 
+            return true;
+        }
+        return null;
+     }
+
     public function viewAny(User $user): bool
     {
-        return $user->role == 'admin' || $user->role == 'user';
+         return true;
     }
 
     /**
@@ -21,7 +30,7 @@ class DaftarPesertaPolicy
      */
     public function view(User $user, daftarpeserta $daftarpeserta): bool
     {
-        return $user->role == 'user';
+        return $user->role == 'admin' || $user->id === $daftarpeserta->user_id;
     }
 
     /**
@@ -37,7 +46,7 @@ class DaftarPesertaPolicy
      */
     public function update(User $user, daftarpeserta $daftarpeserta): bool
     {
-        return $user->role == 'user';
+        return $user->role == 'admin' || $user->id === $daftarpeserta->user_id;
     }
 
     /**

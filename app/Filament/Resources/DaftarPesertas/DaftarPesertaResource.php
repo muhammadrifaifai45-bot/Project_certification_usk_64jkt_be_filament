@@ -15,6 +15,8 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
 use UnitEnum;
 
 class DaftarPesertaResource extends Resource
@@ -29,6 +31,11 @@ class DaftarPesertaResource extends Resource
     protected static string|BackedEnum|null $activeNavigationIcon = 'heroicon-s-identification';
 
     protected static ?string $recordTitleAttribute = 'id';
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery();
+    }
 
     public static function form(Schema $schema): Schema
     {

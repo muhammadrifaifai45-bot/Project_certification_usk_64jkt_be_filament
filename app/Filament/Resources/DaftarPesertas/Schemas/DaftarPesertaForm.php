@@ -22,6 +22,11 @@ class DaftarPesertaForm
                     ->required(),
                 TextInput::make('nik')
                     ->label('NIK')
+                    ->maxLength(16)
+                    ->minLength(16)
+                    ->validationMessages([
+                        'min' => 'Harus  16 digit'
+                    ])
                     ->required(),
                 Select::make('gender')
                     ->label('jenis Kelamin')
