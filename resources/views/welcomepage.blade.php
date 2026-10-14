@@ -20,7 +20,7 @@
             <p class="text-gray-600 text-base lg:text-lg leading-relaxed mb-16 font-medium">
                 Selamat datang di Platform sertifikasi kompetensi kerja BNSP yang di akui dalam dunia industri nasional maupun global
             </p>
-            <div class="w-full h-1.5 bg-gray-200 rounded-full-mb-6 relative overflow-hidden">
+            <div class="w-full h-1.5 bg-gray-200 rounded-full mb-6 relative overflow-hidden">
                 <div class="absolute left-0 top-0 h-full w-[50%] bg-[#790D16] rounded-full">
                 </div>
             </div>
@@ -48,10 +48,14 @@
                         <svg xlmns="http://w3.org" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                         </svg>
-                    </div>
+                    </div>                   
                 </div>
+                
             </div>
+            <div class="absolute bottom-16 left-12 bg-black/30 backdrop-blur-sm text-white text-xs lg:text-sm px-5 py-2.5 rounded-full">Asesor Berkompeten Serta Bermutu Global</div>
        </div>
+
+      
      </div>
 </body>
 </html>
