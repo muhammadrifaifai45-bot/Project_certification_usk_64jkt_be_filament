@@ -40,7 +40,15 @@
 
             <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-sm lg:max-w-md w-full border-gray-100 transform -rotate-1 transition-transform duration-300 hover:rotate-0">
                 <div class="border-2 border-red-800 rounded-xl p-6 flex flex-col relative min-h-[220px]">
-                    <span class="text -[10px] lg:text-xs"></span>
+                    <span class="text -[10px] lg:text-xs font-bold text-red-700 tracking-widest uppercase mb-4 block">Sertifikasi Kompetensi</span>
+                    <h2 class="text-2xl lg:text-3xl font-serif font-bold text-gray-900 mb-1">Peserta BNSP 001</h2>
+                    <p class="text-xs lg:text-sm text-gray-500 font-medium">Junior Web Dev</p>
+
+                    <div class="absolute bottom-4 right-4 bg-[#790D16] text-white p-3 rounded-full shadow-md flex items-center justify-center">
+                        <svg xlmns="http://w3.org" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
                 </div>
             </div>
        </div>
