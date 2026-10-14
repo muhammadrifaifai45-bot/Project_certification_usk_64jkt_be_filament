@@ -47,4 +47,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function daftarpeserta(){
+        return $this->hasOne(daftarpeserta::class, 'user_id');
+    }
 }

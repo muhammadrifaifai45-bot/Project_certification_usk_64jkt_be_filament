@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class daftarpeserta extends Model
 {
     protected $fillable = [
         'certification_list_id',
+        'user_id',
         'nama_peserta',
         'nik',
         'gender',
@@ -21,5 +23,9 @@ class daftarpeserta extends Model
     
     public function CertificationCode(){
         return $this->hasOne(CertificationCode::class);
+    }
+
+    public function user(){
+        return $this->BelongsTo(User::class);
     }
 }
