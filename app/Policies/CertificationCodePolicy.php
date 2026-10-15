@@ -37,7 +37,7 @@ class CertificationCodePolicy
      */
     public function update(User $user, CertificationCode $certificationCode): bool
     {
-        return $user->role == 'admin';
+        return $user->role == 'admin' || $user->role == 'user';
     }
 
     /**

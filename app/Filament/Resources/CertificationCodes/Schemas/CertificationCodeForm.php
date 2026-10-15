@@ -18,7 +18,7 @@ class CertificationCodeForm
             ->components([
                 Select::make('daftarpeserta_id')
                     ->label('Pilih nama peserta yang telah terdaftar')
-                    ->disableOptionWhen(fn($value) => CertificationCode::where('daftarpeserta_id',$value)->exists())
+                    // ->disableOptionWhen(fn($value) => CertificationCode::where('daftarpeserta_id',$value)->exists())
                     ->required()
                     ->relationship('daftarpeserta', 'nama_peserta')
                     ->searchable()
@@ -53,20 +53,20 @@ class CertificationCodeForm
                 ->label('Dokumen Pendukung')
                 ->image()
                 ->disabled()
-                ->dehydrated()
-                ->required(),
+                ->dehydrated(),
+              
                 FileUpload::make('fotosertifikasi')
                 ->label('Dokumen Sertifikasi')
                 ->image()
                 ->disabled()
-                ->dehydrated()
-                ->required(),
+                ->dehydrated(),
+               
                 FileUpload::make('fotoktp')
                 ->label('Dokumen Ktp')
                 ->image()
                 ->disabled()
-                ->dehydrated()
-                ->required(),
+                ->dehydrated(),
+                
 
 
 

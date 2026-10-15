@@ -26,12 +26,12 @@ class CertificationCodesTable
                 TextColumn::make('status')
                     ->formatStateUsing(fn(string $state): string =>match($state)
                     {
-                        'Antrian' => 'Data Dalam Antrian',
+                        'Antrian' => 'Data Gagal terverifikasi Data kurang lengkap',
                         'Verifikasi' => 'Data Dalam Verifikasi petugas ',
                         'DataTerverifikasi' => 'Berhasil verifikasi',                    
                     })
                     ->color(fn(string $state): string  =>match ($state){
-                        'Antrian' => 'info',
+                        'Antrian' => 'danger',
                         'Verifikasi' => '#FFCB56',
                         'DataTerverifikasi' => 'success'
                     })
