@@ -46,7 +46,7 @@ class CertificationListPolicy
      */
     public function delete(User $user, CertificationList $certificationList): bool
     {
-        return $user->role == 'admin'|| $user->role == 'user';
+        return $user->role == 'admin';
 
     }
 
