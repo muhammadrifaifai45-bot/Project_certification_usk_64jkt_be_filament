@@ -30,6 +30,7 @@ class EditCertificationCode extends EditRecord
         $data ['gender'] = $daftar->gender;
         $data ['alamat'] = $daftar->alamat;
         $data ['surat_image'] = $daftar->surat_image;
+        
       }
       return $data;
      

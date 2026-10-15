@@ -30,7 +30,11 @@ class DaftarPesertasTable
                 TextColumn::make('gender')
                     ->badge(),
                 ImageColumn::make('surat_image')
-                     ->label('Surat Persetujuan'),
+                     ->label('Dokumen KK'),
+                ImageColumn::make('fotosertifikasi')
+                ->label('Dokumen sertifikasi'),
+                ImageColumn::make('fotoktp')
+                ->label('Dokumen Ktp'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

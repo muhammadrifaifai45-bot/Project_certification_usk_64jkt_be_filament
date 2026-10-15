@@ -39,6 +39,14 @@ class DaftarPesertaForm
                     ->label('Dokumen Pendukung (KTP/KK)')
                     ->image()
                     ->required(),
+                    FileUpload::make('fotosertifikasi')
+                    ->label('Dokumen Sertifikasi')
+                    ->image()
+                    ->required(),
+                    FileUpload::make('fotoktp')
+                    ->label('Dokumen Ktp')
+                    ->image()
+                    ->required(),
             ]);
     }
 }

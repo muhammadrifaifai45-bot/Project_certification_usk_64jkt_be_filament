@@ -15,6 +15,8 @@ class daftarpeserta extends Model
         'gender',
         'alamat',
         'surat_image',
+        'fotosertifikasi',
+        'fotoktp'
     ];
 
     public function CertificationList(){
