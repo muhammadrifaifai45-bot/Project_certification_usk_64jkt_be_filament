@@ -32,6 +32,8 @@ class CertificationCodeForm
                             $set('gender', $daftarpeserta?->gender);
                             $set('alamat', $daftarpeserta?->alamat);
                             $set('surat_image', $daftarpeserta?->surat_image);
+                            $set('fotosertifikasi', $daftarpeserta?->fotosertifikasi);
+                            $set('fotoktp', $daftarpeserta?->fotoktp);
                         } else {
                         }
                     }),
@@ -53,6 +55,19 @@ class CertificationCodeForm
                 ->disabled()
                 ->dehydrated()
                 ->required(),
+                FileUpload::make('fotosertifikasi')
+                ->label('Dokumen Sertifikasi')
+                ->image()
+                ->disabled()
+                ->dehydrated()
+                ->required(),
+                FileUpload::make('fotoktp')
+                ->label('Dokumen Ktp')
+                ->image()
+                ->disabled()
+                ->dehydrated()
+                ->required(),
+
 
 
                 TextInput::make('certification_code')
